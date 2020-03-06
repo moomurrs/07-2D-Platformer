@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle 00.png-0c3c3231f6959ccebe4f59ede0124a6c.stex"
+path="res://.import/fireball 01.png-b1add8a90a261c45b091cfcfec14e7d0.stex"
 
 [deps]
 
-source_file="res://sprites/player/idle 00.png"
-dest_files=[ "res://.import/idle 00.png-0c3c3231f6959ccebe4f59ede0124a6c.stex" ]
+source_file="res://sprites/effects/fireball 01.png"
+dest_files=[ "res://.import/fireball 01.png-b1add8a90a261c45b091cfcfec14e7d0.stex" ]
 
 [params]
 

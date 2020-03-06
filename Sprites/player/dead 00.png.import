@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle 00.png-0c3c3231f6959ccebe4f59ede0124a6c.stex"
+path="res://.import/dead 00.png-f5902b8dae77b97094f15c9bacf2bd11.stex"
 
 [deps]
 
-source_file="res://sprites/player/idle 00.png"
-dest_files=[ "res://.import/idle 00.png-0c3c3231f6959ccebe4f59ede0124a6c.stex" ]
+source_file="res://sprites/player/dead 00.png"
+dest_files=[ "res://.import/dead 00.png-f5902b8dae77b97094f15c9bacf2bd11.stex" ]
 
 [params]
 
