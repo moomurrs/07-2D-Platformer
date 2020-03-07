@@ -3,11 +3,14 @@ extends KinematicBody2D
 # create a pair variable to hold location of player
 var velocity = Vector2()
 # constant variables
-const SPEED = 30
+const SPEED = 60
 const GRAVITY = 10
 const JUMP_POWER = -250
+
+# top of the floor tile pixel
 const FLOOR = Vector2(0, -1)
 
+var on_ground = false
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
@@ -19,12 +22,19 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	if Input.is_action_pressed("ui_up"):
-		velocity.y = -SPEED
-	elif Input.is_action_pressed("ui_down"):
-		velocity.y = SPEED
+		
+		# only jump when on ground
+		if on_ground == true:
+			velocity.y = JUMP_POWER
+			on_ground = false
+	
+	# bring the player down due to gravity
+	velocity.y += GRAVITY
+	
+	if is_on_floor():
+		on_ground = true
 	else:
-		# default: do not move y
-		velocity.y = 0
+		on_ground = false
 	
 	# move player according to updated vector
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity, FLOOR)
