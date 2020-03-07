@@ -2,18 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ground 00.png-d00489931bf9941877b06df194f5293a.stex"
+path="res://.import/ground 00.png-3ee76bdec746c32bde2b979359dfb022.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/environment/ground 00.png"
-dest_files=[ "res://.import/ground 00.png-d00489931bf9941877b06df194f5293a.stex" ]
+source_file="res://Sprites/environment/ground 00.png"
+dest_files=[ "res://.import/ground 00.png-3ee76bdec746c32bde2b979359dfb022.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -23,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

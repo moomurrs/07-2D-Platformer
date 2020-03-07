@@ -2,18 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk 01.png-4a1e657d4ebc5ba20c6389f6ed2d2a63.stex"
+path="res://.import/walk 01.png-00831bf07fc51374994b103d04fa9f3d.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/enemy 01/walk 01.png"
-dest_files=[ "res://.import/walk 01.png-4a1e657d4ebc5ba20c6389f6ed2d2a63.stex" ]
+source_file="res://Sprites/enemy 01/walk 01.png"
+dest_files=[ "res://.import/walk 01.png-00831bf07fc51374994b103d04fa9f3d.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -23,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

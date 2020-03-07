@@ -2,18 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exit selected.png-1327d4d4ad9f4506487c4cbd6fe41dd9.stex"
+path="res://.import/exit selected.png-f0b99b4ba725f2aa9a7fee470b0577a9.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/title screen/exit selected.png"
-dest_files=[ "res://.import/exit selected.png-1327d4d4ad9f4506487c4cbd6fe41dd9.stex" ]
+source_file="res://Sprites/title screen/exit selected.png"
+dest_files=[ "res://.import/exit selected.png-f0b99b4ba725f2aa9a7fee470b0577a9.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -23,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

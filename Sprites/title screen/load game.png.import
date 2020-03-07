@@ -2,18 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/load game.png-200095cb0fa98a36e683964785e16a48.stex"
+path="res://.import/load game.png-5da9a40d7dd3d3f12a9abb72e696a107.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/title screen/load game.png"
-dest_files=[ "res://.import/load game.png-200095cb0fa98a36e683964785e16a48.stex" ]
+source_file="res://Sprites/title screen/load game.png"
+dest_files=[ "res://.import/load game.png-5da9a40d7dd3d3f12a9abb72e696a107.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -23,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

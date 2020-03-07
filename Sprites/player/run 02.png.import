@@ -2,18 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/run 02.png-2d63b8f824ee02aeaf3f3a025c65643f.stex"
+path="res://.import/run 02.png-f3c7003c40539201175e4ef4e4ebc0f9.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/player/run 02.png"
-dest_files=[ "res://.import/run 02.png-2d63b8f824ee02aeaf3f3a025c65643f.stex" ]
+source_file="res://Sprites/player/run 02.png"
+dest_files=[ "res://.import/run 02.png-f3c7003c40539201175e4ef4e4ebc0f9.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -23,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

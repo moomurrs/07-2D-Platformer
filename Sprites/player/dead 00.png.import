@@ -2,18 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dead 00.png-f5902b8dae77b97094f15c9bacf2bd11.stex"
+path="res://.import/dead 00.png-fc989d0875606293f2a42a0258727dc2.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/player/dead 00.png"
-dest_files=[ "res://.import/dead 00.png-f5902b8dae77b97094f15c9bacf2bd11.stex" ]
+source_file="res://Sprites/player/dead 00.png"
+dest_files=[ "res://.import/dead 00.png-fc989d0875606293f2a42a0258727dc2.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -23,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
