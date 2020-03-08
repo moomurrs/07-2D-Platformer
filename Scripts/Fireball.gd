@@ -21,6 +21,7 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.x = SPEED * delta * direction
+	# move the fireball (area2d)
 	self.translate(velocity)
 	$AnimatedSprite.play("shoot")
 
@@ -30,4 +31,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 # destroy fireball when it encountes an object
 func _on_Fireball_body_entered(body):
+	# check is the fireball hit an enemy. if so, trigger its death
+	if "Enemy" in body.name:
+		body.dead()
+	# remove fireball after collision
 	self.queue_free()

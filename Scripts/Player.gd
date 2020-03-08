@@ -12,49 +12,63 @@ const FIREBALL = preload("res://Scenes/Fireball.tscn")
 const FLOOR = Vector2(0, -1)
 
 var on_ground = false
+var is_attacking = false
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = SPEED
 		
-		# don't flip sprite when facing right
-		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("run")
-		
-		# make sure the fireball emission is at the correct direction
-		if sign($FireballEmission2D.position.x) == -1:
-			$FireballEmission2D.position.x *= -1
-		# NOTE: center of Position2D is the center of Player spite
+		if not is_attacking or not is_on_floor():
+			velocity.x = SPEED
+			
+			if not is_attacking:
+				# don't flip sprite when facing right
+				$AnimatedSprite.flip_h = false
+				$AnimatedSprite.play("run")
+				
+				# make sure the fireball emission is at the correct direction
+				if sign($FireballEmission2D.position.x) == -1:
+					$FireballEmission2D.position.x *= -1
+				# NOTE: center of Position2D is the center of Player spite
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -SPEED
 		
-		# make sure the fireball emission is at the correct direction
-		if sign($FireballEmission2D.position.x) == 1:
-			$FireballEmission2D.position.x *= -1
-		
-		# flip sprite when facing left
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("run")
+		if not is_attacking or not is_on_floor():
+			velocity.x = -SPEED
+			
+			if not is_attacking:
+				# make sure the fireball emission is at the correct direction
+				if sign($FireballEmission2D.position.x) == 1:
+					$FireballEmission2D.position.x *= -1
+				
+				# flip sprite when facing left
+				$AnimatedSprite.flip_h = true
+				$AnimatedSprite.play("run")
 	else:
 		# default: do not move x
 		velocity.x = 0
 		# play the idle animation only if player is not moving AND is on ground
-		if on_ground:
+		if on_ground and not is_attacking:
 			$AnimatedSprite.play("idle")
 	
 	if Input.is_action_pressed("ui_up"):
-		
-		# only jump when on ground
-		if on_ground == true:
-			velocity.y = JUMP_POWER
-			
-			on_ground = false
+		if not is_attacking:
+			# only jump when on ground
+			if on_ground == true:
+				velocity.y = JUMP_POWER
+				
+				on_ground = false
 	
 	# bring the player down due to gravity
 	velocity.y += GRAVITY
 	
-	# enable rapid fire with just_pressed
-	if Input.is_action_just_pressed("ui_shoot"):
+	# only fire fireball if the attack animation is finished
+	if Input.is_action_just_pressed("ui_shoot") && not is_attacking:
+		# no movement allowed when firing
+		if is_on_floor():
+			velocity.x = 0
+		
+		is_attacking = true
+		$AnimatedSprite.play("attack")
+		
 		# ready the fireball node
 		var fireball = FIREBALL.instance()
 		
@@ -70,15 +84,23 @@ func _physics_process(delta):
 		fireball.position = $FireballEmission2D.global_position
 	
 	if is_on_floor():
+		if not on_ground:
+			# attacks are to be easily overridable by jump or other movement
+			is_attacking = false
 		on_ground = true
 	else:
-		on_ground = false
-		# if player is moving upwards and isn't on ground, play jump animation
-		if velocity.y < 0:
-			$AnimatedSprite.play("jump")
-		else:
-			# if player is moving down and isn't on ground play fall animation
-			$AnimatedSprite.play("fall")
+		if not is_attacking:
+			on_ground = false
+			# if player is moving upwards and isn't on ground, play jump animation
+			if velocity.y < 0:
+				$AnimatedSprite.play("jump")
+			else:
+				# if player is moving down and isn't on ground play fall animation
+				$AnimatedSprite.play("fall")
 	
 	# move player according to updated vector
 	velocity = move_and_slide(velocity, FLOOR)
+
+# only allow the play to fire when the attack animation is done
+func _on_AnimatedSprite_animation_finished():
+	is_attacking = false
