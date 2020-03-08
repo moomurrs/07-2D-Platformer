@@ -1,120 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/environment/ground 00.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+[ext_resource path="res://Scenes/ground tileset.tres" type="TileSet" id=2]
 
 [node name="StageOne" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 163, 79 )
 
-[node name="Ground00" type="Sprite" parent="."]
-position = Vector2( 24.7544, 120.281 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground00"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground00/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground01" type="Sprite" parent="."]
-position = Vector2( 56.5583, 136.343 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground01"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground01/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground02" type="Sprite" parent="."]
-position = Vector2( 40.6142, 136.625 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground02"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground02/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground03" type="Sprite" parent="."]
-position = Vector2( 72.5435, 136.901 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground03"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground03/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground04" type="Sprite" parent="."]
-position = Vector2( 88.478, 136.663 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground04"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground04/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground05" type="Sprite" parent="."]
-position = Vector2( 103.937, 136.187 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground05"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground05/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground06" type="Sprite" parent="."]
-position = Vector2( 119.633, 136.187 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground06"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground06/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground07" type="Sprite" parent="."]
-position = Vector2( 136.043, 136.187 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground07"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground07/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Ground08" type="Sprite" parent="."]
-position = Vector2( 152.216, 135.949 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground08"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground08/StaticBody2D"]
-shape = SubResource( 1 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393224, 12, 0, 393225, 0, 0, 393226, 2, 0, 393227, 11, 0, 458755, 12, 0, 458756, 11, 0, 458760, -1073741821, 0, 458761, -1610612728, 0, 458762, -1610612728, 0, 458763, -1610612731, 0, 458769, 12, 0, 458770, 11, 0, 524291, 10, 0, 524292, 8, 0, 524301, 6, 0, 524304, 12, 0, 524305, 9, 0, 524306, 8, 0, 589827, 10, 0, 589828, 8, 0, 589837, 7, 0, 589839, 12, 0, 589840, 9, 0, 589841, 9, 0, 589842, 8, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 9, 0, 655364, 9, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 9, 0, 655376, 9, 0, 655377, 9, 0, 655378, 9, 0, 655379, 4, 0 )
