@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/squat 00.png-bcad1624473d23e22fd6a4c0f0ac2850.stex"
+path="res://.import/squat 00.png-ae96168489823581394913013dbd350c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player/squat 00.png"
-dest_files=[ "res://.import/squat 00.png-bcad1624473d23e22fd6a4c0f0ac2850.stex" ]
+source_file="res://Sprites/Player/squat 00.png"
+dest_files=[ "res://.import/squat 00.png-ae96168489823581394913013dbd350c.stex" ]
 
 [params]
 
