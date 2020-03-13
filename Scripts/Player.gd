@@ -112,7 +112,11 @@ func _physics_process(delta):
 				if "Enemy" in get_slide_collision(i).collider.name:
 					# kill the player if the collision was an enemy
 					dead()
-	get_parent().get_node("CanvasLayer/Label").text = "Score: " + str(get_node("/root/GlobalVar").score)
+	if get_parent().name == "StageOne":
+		get_parent().get_node("CanvasLayer/Label").text = "Score: " + str(get_node("/root/GlobalVar").stageOnePoints)
+	else:
+		get_parent().get_node("CanvasLayer/Label").text = "Score: " + str(get_node("/root/GlobalVar").stageTwoPoints + get_node("/root/GlobalVar").stageOnePoints)
+	
 func dead():
 	is_dead = true
 	velocity = Vector2(0,0)
@@ -127,4 +131,4 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Scenes/Title Screen.tscn")
+	get_tree().change_scene("res://Scenes/End.tscn")

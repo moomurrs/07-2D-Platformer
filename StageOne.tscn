@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ground tileset.tres" type="TileSet" id=2]
@@ -7,11 +7,16 @@
 [ext_resource path="res://Scripts/ScreenShake.gd" type="Script" id=5]
 [ext_resource path="res://Font/OstrichSans-Heavy.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/ChangeStage.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/StageOne.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 6 )
 
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
 [node name="StageOne" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -83,6 +88,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Save" type="Button" parent="CanvasLayer"]
+margin_left = 268.0
+margin_top = 5.0
+margin_right = 310.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 31.1882, 147.765 )
 
@@ -90,3 +106,4 @@ position = Vector2( 31.1882, 147.765 )
 position = Vector2( 727.724, 99.7531 )
 target_stage = "res://StageTwo.tscn"
 [connection signal="tween_completed" from="ScreenShake/Tween" to="ScreenShake" method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="CanvasLayer/Save" to="." method="_on_Save_pressed"]

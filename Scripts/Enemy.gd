@@ -29,7 +29,10 @@ func dead():
 		# remove enemy collision box
 		$CollisionShape2D.set_deferred("disabled", true)
 		# let the body stay on stage for a few seconds
-		get_node("/root/GlobalVar").score += 1
+		if get_parent().get_parent().name == "StageOne":
+			get_node("/root/GlobalVar").stageOnePoints += 1
+		else:
+			get_node("/root/GlobalVar").stageTwoPoints += 1
 		$DeathTimer.start()
 		# shake the screen if the dead enemy is large
 		if scale > Vector2(1,1):
